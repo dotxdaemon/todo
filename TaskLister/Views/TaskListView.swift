@@ -84,10 +84,6 @@ struct TaskListView: View {
             (trimmedQuery.isEmpty || task.title.localizedCaseInsensitiveContains(trimmedQuery) || task.notes.localizedCaseInsensitiveContains(trimmedQuery))
         }
 
-        if canReorder {
-            return filtered
-        }
-
         return filtered.sorted { lhs, rhs in
             switch (lhs.isCompleted, rhs.isCompleted) {
             case (false, true):
